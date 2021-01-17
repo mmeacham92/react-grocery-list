@@ -22,6 +22,7 @@ const App = () => {
         itemList={itemList}
         setItemList={setItemList}
       />
+      <button onClick={() => setItemList([])}>Clear All</button>
     </div>
   );
 };
