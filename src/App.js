@@ -28,7 +28,7 @@ const clearListHandler = () => {
         itemList={itemList}
         setItemList={setItemList}
       />
-      <button onClick={clearListHandler}>Clear All</button>
+      <button onClick={clearListHandler} className='clear__all'>Clear All</button>
     </div>
   );
 };

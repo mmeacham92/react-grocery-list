@@ -1,6 +1,8 @@
 body {
     min-height: 100vh;
     background: linear-gradient(120deg, #1160E0, #16E1F0);
+    font-family: 'Montserrat', sans-serif;
+    color: #1160E0;
 }
 
 .container {
@@ -15,30 +17,61 @@ body {
 }
 
 .header {
-  color: white;
   text-align: center;
-  font-size: 1.5rem;
+  color: white;
 }
 
-.input__form {
-  
+.header > h1 {
+  font-size: 4rem;
+}
+
+.item__input, .item__submit {
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  /* margin-top: 1rem; */
+}
+
+.item__input {
+  color:#1160E0;
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+
+.item__submit {
+  background-color: white;
+  color:#1160E0;
+  padding: 0.5rem 1rem;
+  transition: all ease 0.3s;
+}
+
+.item__submit:hover {
+  color: white;
+  background-color:#1160E0;
 }
 
 .item__list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* align-items: center; */
   list-style-type: none;
+  margin-right: 30px;
 }
 
 .item__div {
-  /* min-width: 300px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
+  margin: 10px;
 }
 
 .item {
   flex: 1;
-  padding: 1rem;
+  font-weight: 700;
+  padding: 0rem 0.5rem;
+  font-size: 1.5rem;
 }
 
 .checked {
@@ -49,11 +82,10 @@ body {
 
 .item__button {
     padding: 1rem;
-    min-width: 86px;
     border: none;
     cursor: pointer;
     outline: none;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 }
 
 .check:hover {
@@ -66,3 +98,24 @@ body {
   color:white;
 }
 
+.icon {
+  pointer-events: none;
+}
+
+.clear__all {
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 1rem 3rem;
+  font-size: 1.3rem;
+  color: white;
+  background-color: #1160E0;
+  margin-top: 2rem;
+}
+
+.clear__all:hover {
+  color: #16E1F0;
+  background-color: black;
+  
+}

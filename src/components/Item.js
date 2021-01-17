@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
 const Item = (props) => {
   const checkHandler = (e) => {
     const groceryItem = e.target.parentElement;
@@ -15,10 +19,10 @@ const Item = (props) => {
     <div className="item__div" id={props.id}>
       <li className="item">{props.userInput}</li>
       <button onClick={checkHandler} className="check item__button">
-        Check
+        <FontAwesomeIcon icon={faCheck} className='icon'/>
       </button>
       <button onClick={removeHandler} className="remove item__button">
-        Remove
+        <FontAwesomeIcon icon={faTrash} className='icon'/>
       </button>
     </div>
   );
