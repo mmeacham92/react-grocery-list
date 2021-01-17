@@ -5,9 +5,15 @@ import ItemList from "./components/ItemList";
 import "./App.css";
 
 const App = () => {
-  const [userInput, setUserInput] = useState("");
-  const [itemList, setItemList] = useState([]);
+  let items = localStorage.getItem('itemList') ? JSON.parse(localStorage.getItem('itemList')) : [];
+  let [userInput, setUserInput] = useState("");
+  let [itemList, setItemList] = useState(items);
+  localStorage.setItem('itemList', JSON.stringify(itemList));
 
+const clearListHandler = () => {
+  setItemList([]);
+  localStorage.clear();
+}
   return (
     <div className="container">
       <Header />
@@ -22,7 +28,7 @@ const App = () => {
         itemList={itemList}
         setItemList={setItemList}
       />
-      <button onClick={() => setItemList([])}>Clear All</button>
+      <button onClick={clearListHandler}>Clear All</button>
     </div>
   );
 };
