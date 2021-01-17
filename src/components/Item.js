@@ -1,26 +1,23 @@
 const Item = (props) => {
+  const checkHandler = (e) => {
+    const groceryItem = e.target.parentElement;
+    groceryItem.classList.toggle("checked");
+  };
 
-  const checkRemoveHandler = (e) => {
-    const item = e.target;
-    const groceryItem = item.parentElement;
-    console.log(groceryItem);
-    if (item.classList.contains("remove")) {
-      const itemIndex = props.itemList.indexOf(groceryItem.firstChild.textContent);
-      props.itemList.splice(itemIndex, 1);
-      groceryItem.remove();
-    }
-    if (item.classList.contains('check')) {
-      groceryItem.classList.toggle('checked');
-    }
+  const removeHandler = (e) => {
+    console.log(e.target.parentElement);
+    props.setItemList(
+      props.itemList.filter((item) => e.target.parentElement.id !== item.id)
+    );
   };
 
   return (
-    <div className="item__div">
+    <div className="item__div" id={props.id}>
       <li className="item">{props.userInput}</li>
-      <button onClick={checkRemoveHandler} className="check item__button">
+      <button onClick={checkHandler} className="check item__button">
         Check
       </button>
-      <button onClick={checkRemoveHandler} className="remove item__button">
+      <button onClick={removeHandler} className="remove item__button">
         Remove
       </button>
     </div>
